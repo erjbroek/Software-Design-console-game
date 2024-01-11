@@ -1,9 +1,15 @@
 public class Main {
     public static void main(String[] args) {
+        MultChoiceFactory multChoiceFactory = new MultChoiceFactory();
+        OpenQuestionFactory openQuestionFactory = new OpenQuestionFactory();
+        TrueFalseFactory trueFalseFactory = new TrueFalseFactory();
+
+        Question question1 = multChoiceFactory.createQuestion("Wat is een aap", "een aap", new String[]{"een aap", "een koe", "een kip"});
+        Question question2 = openQuestionFactory.createQuestion("hoe heet de aap", "jan", null);
+        Question question3 = trueFalseFactory.createQuestion("Zijn apen echte dieren", "False", null);
         ConsoleWriter writer = new ConsoleWriter();
         ConsoleReader reader = new ConsoleReader();
-
-        MultChoice question1 = new MultChoice("Wat is een aap", new String[]{"een aap", "een koe", "een kip"}, "een aap");
+        
         question1.writeQuestion(writer);
         if(question1.checkAnswer(reader)) {
             writer.writeLine("correct");
@@ -11,7 +17,6 @@ public class Main {
             writer.writeLine("nu uh");
         }
 
-        TrueFalse question2 = new TrueFalse("Zijn apen echte dieren", "False");
         question2.writeQuestion(writer);
         if(question2.checkAnswer(reader)) {
             writer.writeLine("correct");
@@ -19,7 +24,6 @@ public class Main {
             writer.writeLine("nu uh");
         }
 
-        OpenQuestion question3 = new OpenQuestion("hoe heet de aap", "jan");
         question3.writeQuestion(writer);
         if(question3.checkAnswer(reader)) {
             writer.writeLine("correct");
