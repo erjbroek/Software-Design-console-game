@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         MultChoiceFactory multChoiceFactory = new MultChoiceFactory();
@@ -9,26 +12,40 @@ public class Main {
         Question question3 = trueFalseFactory.createQuestion("Zijn apen echte dieren", "False", null);
         ConsoleWriter writer = new ConsoleWriter();
         ConsoleReader reader = new ConsoleReader();
-        
-        question1.writeQuestion(writer);
-        if(question1.checkAnswer(reader)) {
-            writer.writeLine("correct");
-        } else {
-            writer.writeLine("nu uh");
-        }
 
-        question2.writeQuestion(writer);
-        if(question2.checkAnswer(reader)) {
-            writer.writeLine("correct");
-        } else {
-            writer.writeLine("nu uh");
-        }
 
-        question3.writeQuestion(writer);
-        if(question3.checkAnswer(reader)) {
-            writer.writeLine("correct");
-        } else {
-            writer.writeLine("nu uh");
-        }
+        List<List<String>> grid = new ArrayList<>();
+
+        grid.add(List.of(" ", " ", "x"));
+        grid.add(List.of("x", "o", "x"));
+        grid.add(List.of(" ", " ", " "));
+
+        GridBuilder builder = new GridBuilder();
+        GridDirector gridDirector = new GridDirector();
+        gridDirector.createGrid(builder, grid);
+
+        writer.writeLine(builder.returnGrid());
+
+//
+//        question1.writeQuestion(writer);
+//        if(question1.checkAnswer(reader)) {
+//            writer.writeLine("correct");
+//        } else {
+//            writer.writeLine("nu uh");
+//        }
+//
+//        question2.writeQuestion(writer);
+//        if(question2.checkAnswer(reader)) {
+//            writer.writeLine("correct");
+//        } else {
+//            writer.writeLine("nu uh");
+//        }
+//
+//        question3.writeQuestion(writer);
+//        if(question3.checkAnswer(reader)) {
+//            writer.writeLine("correct");
+//        } else {
+//            writer.writeLine("nu uh");
+//        }
     }
 }
