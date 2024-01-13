@@ -1,16 +1,18 @@
+import java.util.List;
+
 public class TurnNullState implements TurnState {
     @Override
-    public void startGame() {
+    public void startTurn(ConsoleWriter writer) {
 
     }
 
     @Override
-    public void turnPlayer1() {
-
+    public List<List<String>> placeSymbol(ConsoleReader reader, ConsoleWriter writer, List<List<String>> grid) {
+        return null;
     }
 
     @Override
-    public void turnPlayer2() {
+    public void endTurn() {
 
     }
 

@@ -1,21 +1,23 @@
+import java.util.List;
+
 public class TurnEndGame implements TurnState {
     Turn context;
     public TurnEndGame(Turn context) {
         this.context = context;
     }
-    @Override
-    public void startGame() {
-        System.out.println("Started a new game");
-        this.context.changeState(new TurnStartGame(context));
-    }
 
     @Override
-    public void turnPlayer1() {
+    public void startTurn(ConsoleWriter writer) {
         throw new UnsupportedOperationException("It isn't your turn, the game has already ended");
     }
 
     @Override
-    public void turnPlayer2() {
+    public List<List<String>> placeSymbol(ConsoleReader reader, ConsoleWriter writer, List<List<String>> grid) {
+        return null;
+    }
+
+    @Override
+    public void endTurn() {
         throw new UnsupportedOperationException("It isn't your turn, the game has already ended");
     }
 

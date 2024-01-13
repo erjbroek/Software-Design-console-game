@@ -1,21 +1,26 @@
+import java.util.List;
+
 public class TurnPlayer1 implements TurnState{
     Turn context;
+    String symbol;
     public TurnPlayer1(Turn context) {
         this.context = context;
-    }
-    @Override
-    public void startGame() {
-        throw new UnsupportedOperationException("You cannot start a game when the game has already started");
+        this.symbol = "X";
     }
 
     @Override
-    public void turnPlayer1() {
-        throw new UnsupportedOperationException("You cannot have a turn again you have already had your turn");
+    public void startTurn(ConsoleWriter writer) {
+        writer.writeLine("It is player " + this.symbol + " turn");
     }
 
     @Override
-    public void turnPlayer2() {
-        System.out.println("Player 2 turn");
+    public List<List<String>> placeSymbol(ConsoleReader reader, ConsoleWriter writer, List<List<String>> grid) {
+        return null;
+    }
+
+    @Override
+    public void endTurn() {
+        System.out.println("Give turn to player 2");
         this.context.changeState(new TurnPlayer2(context));
     }
 
