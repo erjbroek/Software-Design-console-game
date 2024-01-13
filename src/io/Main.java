@@ -17,9 +17,10 @@ public class Main {
 
         turn.startTurn();
         turn.askQuestion(question1);
-        turn.checkAnswer(question1);
-        turn.renderBoard();
-        //turn.placeSymbol();
+        if (turn.checkAnswer(question1)) {
+            turn.renderBoard();
+            //turn.placeSymbol();
+        }
         turn.endTurn();
     }
 }
