@@ -3,6 +3,11 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        Turn turn = new Turn(new TurnNullState());
+        TurnStartGame startState = new TurnStartGame(turn);
+        turn.changeState(startState);
+
+
         MultChoiceFactory multChoiceFactory = new MultChoiceFactory();
         OpenQuestionFactory openQuestionFactory = new OpenQuestionFactory();
         TrueFalseFactory trueFalseFactory = new TrueFalseFactory();
@@ -16,8 +21,8 @@ public class Main {
 
         List<List<String>> grid = new ArrayList<>();
 
-        grid.add(List.of(" ", " ", "x"));
-        grid.add(List.of("x", "o", "x"));
+        grid.add(List.of(" ", " ", " "));
+        grid.add(List.of(" ", " ", " "));
         grid.add(List.of(" ", " ", " "));
 
         GridBuilder builder = new GridBuilder();

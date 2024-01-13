@@ -23,7 +23,7 @@ public class MultChoice implements Question {
             writer.writeLine(i + 1 + ": " + options[i]);
         }
         writer.writeLine("");
-        writer.writeLine("Selecteer het goede antwoord:");
+        writer.writeLine("Select the right answer:");
     }
 
     public boolean checkAnswer(ConsoleReader reader) {
