@@ -2,6 +2,7 @@ import java.util.List;
 
 public class GridDirector {
     public void createGrid(gridBuilderInterface builder, List<List<String>> array) {
+        builder.reset();
         builder.firstRow();
         builder.indexRow("1", "2", "3");
         builder.optionRow(array.get(0));

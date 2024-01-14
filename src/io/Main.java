@@ -6,6 +6,7 @@ public class Main {
         Turn turn = new Turn(new TurnNullState());
         TurnPlayer1 turnPlayer1 = new TurnPlayer1(turn);
         turn.changeState(turnPlayer1);
+        ConsoleWriter writer = new ConsoleWriter();
 
         MultChoiceFactory multChoiceFactory = new MultChoiceFactory();
         OpenQuestionFactory openQuestionFactory = new OpenQuestionFactory();
@@ -19,7 +20,24 @@ public class Main {
         turn.askQuestion(question1);
         if (turn.checkAnswer(question1)) {
             turn.renderBoard();
-            //turn.placeSymbol();
+            turn.placeSymbol();
+            turn.renderBoard();
+        }
+        turn.endTurn();
+        turn.startTurn();
+        turn.askQuestion(question2);
+        if (turn.checkAnswer(question2)) {
+            turn.renderBoard();
+            turn.placeSymbol();
+            turn.renderBoard();
+        }
+        turn.endTurn();
+        turn.startTurn();
+        turn.askQuestion(question3);
+        if (turn.checkAnswer(question3)) {
+            turn.renderBoard();
+            turn.placeSymbol();
+            turn.renderBoard();
         }
         turn.endTurn();
     }

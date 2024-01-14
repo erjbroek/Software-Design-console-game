@@ -22,6 +22,10 @@ public class GridBuilder implements gridBuilderInterface{
         gameboard += "|_____|_____|_____|";
         gameboard += addNewLine();
     }
+
+    public void reset() {
+        gameboard = "";
+    }
     public String returnGrid() {
         return gameboard;
     }

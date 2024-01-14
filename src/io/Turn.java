@@ -46,7 +46,7 @@ public class Turn {
         this.writer.writeLine(this.builder.returnGrid());
     };
     public void placeSymbol() {
-        this.turnState.placeSymbol(this.reader, this.writer, this.grid);
+        this.grid = this.turnState.placeSymbol(this.reader, this.writer, this.grid);
     };
 
     public void endTurn() {
