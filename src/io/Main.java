@@ -6,39 +6,43 @@ public class Main {
         Turn turn = new Turn(new TurnNullState());
         TurnPlayer1 turnPlayer1 = new TurnPlayer1(turn);
         turn.changeState(turnPlayer1);
-        ConsoleWriter writer = new ConsoleWriter();
 
         MultChoiceFactory multChoiceFactory = new MultChoiceFactory();
         OpenQuestionFactory openQuestionFactory = new OpenQuestionFactory();
         TrueFalseFactory trueFalseFactory = new TrueFalseFactory();
+        List<Question> questions = new ArrayList<>();
+        // multiple choice questions
+        questions.add(multChoiceFactory.createQuestion("What is the smallest country in the world?", "Vatican City", new String[]{"Luxembourg", "Vatican City", "Liechtenstein"}));
+        questions.add(multChoiceFactory.createQuestion("A green owl is the mascot for which app?", "Duolingo", new String[]{"Spotify", "Tinder", "Duolingo", "Twitter",}));
+        questions.add(multChoiceFactory.createQuestion("Hippopotomonstrosesquippedaliophobia is a phobia for:", "Long words", new String[]{"Long words", "Big animals", "Small places"}));
+        questions.add(multChoiceFactory.createQuestion("What is the most common surname in the United States?", "Smith", new String[]{"Brown", "Smith", "Wilson", "MacDonald", "Williams"}));
+        // open questions
+        questions.add(openQuestionFactory.createQuestion("In a website browser address bar, what does “www” stand for?", "World Wide Web", null));
+        questions.add(openQuestionFactory.createQuestion("What game studio makes the Grand Theft Auto series? ", "Rockstar", null));
+        questions.add(openQuestionFactory.createQuestion("What is the fastest animal on planet earth?", "Cheetah", null));
+        questions.add(openQuestionFactory.createQuestion("What is the chemical symbol for gold?p", "Au", null));
 
-        Question question1 = multChoiceFactory.createQuestion("Wat is een aap", "een aap", new String[]{"een aap", "een koe", "een kip"});
-        Question question2 = openQuestionFactory.createQuestion("hoe heet de aap", "jan", null);
-        Question question3 = trueFalseFactory.createQuestion("Zijn apen echte dieren", "False", null);
+        // true / false questions
+        questions.add(trueFalseFactory.createQuestion("Is Africa the largest continent", "False", null));
+        questions.add(trueFalseFactory.createQuestion("The blue whale is the biggest animal to have ever lived.", "True", null));
+        questions.add(trueFalseFactory.createQuestion("Scotland’s national animal is a unicorn", "True", null));
+        questions.add(trueFalseFactory.createQuestion("The main language of brazil is brazilian", "False", null));
 
-        turn.startTurn();
-        turn.askQuestion(question1);
-        if (turn.checkAnswer(question1)) {
-            turn.renderBoard();
-            turn.placeSymbol();
-            turn.renderBoard();
+
+        while (true) {
+            // get a random question
+            int randomInt = (int) Math.round(Math.random() * (questions.size() - 1));
+            Question question = questions.get(randomInt);
+
+            // turn of a player
+            turn.startTurn();
+            turn.askQuestion(question);
+            if (turn.checkAnswer(question)) {
+                turn.renderBoard();
+                turn.placeSymbol();
+                turn.renderBoard();
+            }
+            turn.endTurn();
         }
-        turn.endTurn();
-        turn.startTurn();
-        turn.askQuestion(question2);
-        if (turn.checkAnswer(question2)) {
-            turn.renderBoard();
-            turn.placeSymbol();
-            turn.renderBoard();
-        }
-        turn.endTurn();
-        turn.startTurn();
-        turn.askQuestion(question3);
-        if (turn.checkAnswer(question3)) {
-            turn.renderBoard();
-            turn.placeSymbol();
-            turn.renderBoard();
-        }
-        turn.endTurn();
     }
 }
