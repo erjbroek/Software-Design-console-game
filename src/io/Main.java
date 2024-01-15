@@ -3,7 +3,9 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Turn turn = new Turn(new TurnNullState());
+        ConsoleReader reader = new ConsoleReader();
+        ConsoleWriter writer = new ConsoleWriter();
+        Turn turn = new Turn(new TurnNullState(), reader, writer);
         TurnPlayer1 turnPlayer1 = new TurnPlayer1(turn);
         turn.changeState(turnPlayer1);
 
@@ -20,7 +22,7 @@ public class Main {
         questions.add(openQuestionFactory.createQuestion("In a website browser address bar, what does “www” stand for?", "World Wide Web", null));
         questions.add(openQuestionFactory.createQuestion("What game studio makes the Grand Theft Auto series? ", "Rockstar", null));
         questions.add(openQuestionFactory.createQuestion("What is the fastest animal on planet earth?", "Cheetah", null));
-        questions.add(openQuestionFactory.createQuestion("What is the chemical symbol for gold?p", "Au", null));
+        questions.add(openQuestionFactory.createQuestion("What is the chemical symbol for gold?", "Au", null));
 
         // true / false questions
         questions.add(trueFalseFactory.createQuestion("Is Africa the largest continent", "False", null));
@@ -40,7 +42,9 @@ public class Main {
             if (turn.checkAnswer(question)) {
                 turn.renderBoard();
                 turn.placeSymbol();
+                writer.clearConsole();
                 turn.renderBoard();
+                questions.remove(randomInt);
             }
             turn.endTurn();
         }

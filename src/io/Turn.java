@@ -8,10 +8,10 @@ public class Turn {
     GridBuilder builder;
     GridDirector gridDirector;
     List<List<String>> grid;
-    public Turn(TurnState turnState) {
+    public Turn(TurnState turnState, ConsoleReader reader, ConsoleWriter writer) {
         this.turnState = turnState;
-        this.reader = new ConsoleReader();
-        this.writer = new ConsoleWriter();
+        this.reader = reader;
+        this.writer = writer;
         this.builder = new GridBuilder();
         this.gridDirector = new GridDirector();
         this.grid = new ArrayList<>();

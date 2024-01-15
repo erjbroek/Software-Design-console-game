@@ -6,3 +6,4 @@
 12-1-2024 Erik programmed & Robin pairprogrammmed | Board builder gemaakt<br>
 13-1-2024 Robin programmed & Erik pairprogrammmed | State design pattern gemaakt<br>
 14-1-2024 Erik programmed & Robin pairprogrammmed | players place symbol and renders it correctly, and fixed some bugs <br>
+15-1-2024 Robin programmed & Erik pairprogrammmed | Added questions and base game loop<br>
