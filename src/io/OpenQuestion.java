@@ -9,7 +9,7 @@ public class OpenQuestion implements Question {
     }
 
     public void writeQuestion(ConsoleWriter writer) {
-        writer.writeLine(question + "?");
+        writer.writeLine(question);
     }
 
     public boolean checkAnswer(ConsoleReader reader) {

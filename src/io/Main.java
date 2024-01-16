@@ -7,6 +7,7 @@ public class Main {
         ConsoleWriter writer = new ConsoleWriter();
         Turn turn = new Turn(new TurnNullState(), reader, writer);
         TurnPlayer1 turnPlayer1 = new TurnPlayer1(turn);
+        Boolean endPlaying = false;
         turn.changeState(turnPlayer1);
 
         MultChoiceFactory multChoiceFactory = new MultChoiceFactory();
@@ -25,13 +26,13 @@ public class Main {
         questions.add(openQuestionFactory.createQuestion("What is the chemical symbol for gold?", "Au", null));
 
         // true / false questions
-        questions.add(trueFalseFactory.createQuestion("Is Africa the largest continent", "False", null));
+        questions.add(trueFalseFactory.createQuestion("Africa is the largest continent.", "False", null));
         questions.add(trueFalseFactory.createQuestion("The blue whale is the biggest animal to have ever lived.", "True", null));
-        questions.add(trueFalseFactory.createQuestion("Scotland’s national animal is a unicorn", "True", null));
-        questions.add(trueFalseFactory.createQuestion("The main language of brazil is brazilian", "False", null));
+        questions.add(trueFalseFactory.createQuestion("Scotland’s national animal is a unicorn.", "True", null));
+        questions.add(trueFalseFactory.createQuestion("The main language of brazil is brazilian.", "False", null));
 
 
-        while (true) {
+        while (!endPlaying) {
             // get a random question
             int randomInt = (int) Math.round(Math.random() * (questions.size() - 1));
             Question question = questions.get(randomInt);
@@ -45,8 +46,15 @@ public class Main {
                 writer.clearConsole();
                 turn.renderBoard();
                 questions.remove(randomInt);
+                if (turn.checkGrid()) {
+                    turn.endGame();
+                    endPlaying = true;
+                } else {
+                    turn.endTurn();
+                }
+            } else {
+                turn.endTurn();
             }
-            turn.endTurn();
         }
     }
 }

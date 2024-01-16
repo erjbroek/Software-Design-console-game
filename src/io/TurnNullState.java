@@ -12,12 +12,17 @@ public class TurnNullState implements TurnState {
     }
 
     @Override
+    public boolean checkGrid(List<List<String>> grid, checkGridFacade checkGridFacade) {
+        return false;
+    }
+
+    @Override
     public void endTurn() {
 
     }
 
     @Override
-    public void endGame() {
+    public void endGame(ConsoleWriter writer) {
 
     }
 }

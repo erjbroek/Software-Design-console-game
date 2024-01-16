@@ -29,7 +29,7 @@ public class MultChoice implements Question {
     public boolean checkAnswer(ConsoleReader reader) {
         String selected = reader.readLine();
 
-        if (Objects.equals(selected.toLowerCase(), answer) || Objects.equals(Integer.toString(Arrays.asList(options).indexOf(answer) + 1), selected)) {
+        if (answer.toLowerCase().equalsIgnoreCase(selected) || Objects.equals(Integer.toString(Arrays.asList(options).indexOf(answer) + 1), selected)) {
             return true;
         }
         return false;

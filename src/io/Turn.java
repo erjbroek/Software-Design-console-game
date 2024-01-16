@@ -8,6 +8,7 @@ public class Turn {
     GridBuilder builder;
     GridDirector gridDirector;
     List<List<String>> grid;
+    checkGridFacade checkGridFacade;
     public Turn(TurnState turnState, ConsoleReader reader, ConsoleWriter writer) {
         this.turnState = turnState;
         this.reader = reader;
@@ -15,6 +16,7 @@ public class Turn {
         this.builder = new GridBuilder();
         this.gridDirector = new GridDirector();
         this.grid = new ArrayList<>();
+        this.checkGridFacade = new checkGridFacade();
         grid.add(List.of(" ", " ", " "));
         grid.add(List.of(" ", " ", " "));
         grid.add(List.of(" ", " ", " "));
@@ -34,10 +36,14 @@ public class Turn {
 
     public boolean checkAnswer(Question question) {
         if(question.checkAnswer(reader)) {
+            this.writer.clearConsole();
             writer.writeLine("correct");
+            writer.writeLine("");
             return true;
         } else {
-            writer.writeLine("nu uh");
+            this.writer.clearConsole();
+            writer.writeLine("wrong");
+            writer.writeLine("");
             return false;
         }
     };
@@ -49,10 +55,14 @@ public class Turn {
         this.grid = this.turnState.placeSymbol(this.reader, this.writer, this.grid);
     };
 
+    public boolean checkGrid() {
+        return this.turnState.checkGrid(this.grid, this.checkGridFacade);
+    }
+
     public void endTurn() {
         this.turnState.endTurn();
     }
     public void endGame() {
-        this.turnState.endGame();
+        this.turnState.endGame(this.writer);
     }
 }
