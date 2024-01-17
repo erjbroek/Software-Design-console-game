@@ -16,7 +16,8 @@ We spraken iedere dag af om te pair programmen en wisselde iedere dag om waardoo
 - Robin (7)
 
 ### Planning
-9-1-2024 Initial commit 10-1-2024 Erik programmed & Robin pair programmed | Questions types gemaakt<br>
+9-1-2024 Initial commit <br>
+10-1-2024 Erik programmed & Robin pair programmed | Questions types gemaakt<br>
 11-1-2024 Robin programmed & Erik pair programmed | Question Factories gemaakt<br>
 12-1-2024 Erik programmed & Robin pair programmed | Board builder gemaakt<br>
 13-1-2024 Robin programmed & Erik pair programmed | State design pattern gemaakt<br>
