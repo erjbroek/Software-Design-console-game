@@ -36,7 +36,7 @@ Het bord wordt elke ronde opnieuw gemaakt in de Turn klasse waar we in de state 
 
 ![gridDirector.png](src/img/gridDirector.png)<br>
 
-**Voorbeeld**
+**Voorbeeld**<br>
 ![gridExample.png](src/img/gridExample.png)<br>
 Hier is te zien hoe de gridDirector het bord opbouwt met en de gegevens meegeeft om het juiste teken in het juiste vakje te zetten.
 ### Factory
@@ -47,20 +47,25 @@ De question interface zorgt ervoor dat alle type vragen gemaakt en nagekeken kun
 ![questionFactories.png](src/img/questionFactories.png)<br>
 Hierboven is te zien hoe alle vragen worden aangemaakt en in de vragenlijst worden gezet.<br>
 Er zijn drie verschillende factories een voor elk type vraag deze maken een nieuwe vraag aan met de meegegeven gegevens. 
-Vervolgens geeft hij de gemaakte vraag terug, die je later kunt nakijken als er een antwoord is geven.
+Vervolgens geeft hij de gemaakte vraag terug, die je later kunt nakijken als er een antwoord is geven. <br>
 <br>
 ![openQuestion.png](src/img/openQuestion.png)<br>
-In dit voorbeeld kun je zien hoe een open vraag wordt geschreven en gecontroleerd.
+In dit voorbeeld kun je zien hoe een open vraag wordt geschreven en gecontroleerd.<br>
 
-**Voorbeelden**
+**Voorbeelden**<br>
+true / false question: <br>
 ![trueFalseQuestion.png](src/img/trueFalseQuestion.png)<br>
+<br>
+Open Question: <br>
 ![openQuestionExample.png](src/img/openQuestionExample.png)<br>
+<br>
+Multiple choice question: <br>
 ![multipleChoiceQuestion.png](src/img/multipleChoiceQuestion.png)<br>
 ### State
 Om na elke beurt te wisselen van speler maken we gebruik van het state design pattern, 
 deze zorgt ervoor dat de state aan het einde van elke beurt verandert om de beurt door te geven aan de volgende persoon.
 Door middel van het state design pattern kunnen we het teken van de speler die aan zet is toevoegen aan het bord.
-Ook kunnen we hiermee aan het einde van de ronde controleren of de speler aan zet gewonnen heeft.
+Ook kunnen we hiermee aan het einde van de ronde controleren of de speler aan zet gewonnen heeft.<br>
 
 ![gameLoop.png](src/img/gameLoop.png)<br>
 Iedere ronde ziet er als volgt uit voor de speler aan zet:
@@ -72,17 +77,21 @@ Iedere ronde ziet er als volgt uit voor de speler aan zet:
 6. Teken nogmaals het bord om te laten zien dat het teken geplaatst is
 7. Controleer of de speler drie op een rij heeft (indien geen drie op een rij eindigt de beurt)
 8. Feliciteer speler dat hij/zij drie op een rij heeft en eindig het spel
-
+   <br>
+   <br>
 ![turnState.png](src/img/turnState.png)<br>
-Dit van een van onze states, deze laat zien hoe de methodes voor speler 1 worden geïmplementeerd.
+Dit van een van onze states, deze laat zien hoe de methodes voor speler 1 worden geïmplementeerd.<br>
+   <br>
 ![turnConstructor.png](src/img/turnConstructor.png)<br>
 De turn class houdt bij in welke staat deze is, houdt updates van de grid bij.
 ### Facade
 ![checkGridFacade.png](src/img/checkGridFacade.png)<br>
-De checkGridFacade zorgt ervoor dat je met een check functie in alle richting kunt controlleren of een speler drie op een rij heeft.
+De checkGridFacade zorgt ervoor dat je met een check functie in alle richting kunt controlleren of een speler drie op een rij heeft.<br>
+<br>
 ![checkGrid.png](src/img/checkGrid.png)<br>
 Hier is te zien hoe we door middel van een functie kijken of een specifiek symbool drie op een rij heeft.
-Als een speler drie op een rij heeft, wordt dit terug gegeven en het spel beëindigt.
+Als een speler drie op een rij heeft, wordt dit terug gegeven en het spel beëindigt.<br>
+<br>
 ![verticalCheck.png](src/img/verticalCheck.png)<br>
 In de verticalCheck loopen we door de x positie op drie vaste y coördinaten,
 hierbij kijken we of de symbolen op deze coördinaten allemaal gelijk zijn aan het meegegeven symbool.
