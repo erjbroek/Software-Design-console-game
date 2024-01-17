@@ -4,8 +4,6 @@ public class GridBuilder implements gridBuilderInterface{
 
     private String gameboard = "";
 
-    private ConsoleWriter writer;
-
     public void firstRow() {
         gameboard += "___________________";
         gameboard += addNewLine();

@@ -7,7 +7,7 @@ public class Main {
         ConsoleWriter writer = new ConsoleWriter();
         Turn turn = new Turn(new TurnNullState(), reader, writer);
         TurnPlayer1 turnPlayer1 = new TurnPlayer1(turn);
-        Boolean endPlaying = false;
+        boolean endPlaying = false;
         turn.changeState(turnPlayer1);
 
         MultChoiceFactory multChoiceFactory = new MultChoiceFactory();

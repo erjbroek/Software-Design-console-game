@@ -15,8 +15,6 @@ public class OpenQuestion implements Question {
     public boolean checkAnswer(ConsoleReader reader) {
         String selected = reader.readLine().toLowerCase();
 
-        if (answer.toLowerCase().equalsIgnoreCase(selected)) {
-            return true;
-        } return false;
+        return answer.toLowerCase().equalsIgnoreCase(selected);
     }
 }

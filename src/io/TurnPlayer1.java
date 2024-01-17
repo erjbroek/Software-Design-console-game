@@ -18,18 +18,18 @@ public class TurnPlayer1 implements TurnState{
 
     @Override
     public List<List<String>> placeSymbol(ConsoleReader reader, ConsoleWriter writer, List<List<String>> grid) {
-        Boolean validPlacement = false;
+        boolean validPlacement = false;
 
         while (!validPlacement) {
             writer.writeLine("Write the number of the empty square you want to place your symbol in");
             String selected = reader.readLine();
             if (selected.matches("\\d+")) {
                 if (Integer.parseInt(selected) >= 1 && Integer.parseInt(selected) <= 9) {
-                    Integer xPosition = Integer.parseInt(selected) % 3;
+                    int xPosition = Integer.parseInt(selected) % 3;
                     if (xPosition == 0) {
                         xPosition = 3;
                     }
-                    Integer yPosition = (int) Math.ceil(Double.parseDouble(selected) / 3);
+                    int yPosition = (int) Math.ceil(Double.parseDouble(selected) / 3);
 
                     List<String> rowToModify = new ArrayList<>(grid.get(yPosition - 1));
 
@@ -63,7 +63,6 @@ public class TurnPlayer1 implements TurnState{
 
     @Override
     public void endGame(ConsoleWriter writer) {
-//        this.context.changeState(new TurnEndGame(context, this.symbol));
         writer.writeLine("player " + this.symbol + " has won!");
     }
 }
