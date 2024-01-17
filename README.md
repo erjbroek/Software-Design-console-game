@@ -1,8 +1,12 @@
 # Software-Design-console-game
+<br>
+<br>
+
 ## TicTacToe with questions
 Je kent allemaal wel het spel ticTacToe ook wel bekend boter-kaas-en-eieren, waarbij het doel is om 3 op een rij te krijgen.
 Om een twist aan het spel te geven hebben wij vragen aan toegevoegd die je correct moet beantwoorden, waarna je jouw teken mag plaatsen.
 Dit zorgt ervoor dat je niet alleen kennis moet hebben over boter-kaas-en-eieren, maar ook nog algemene kennis, wat de potjes toch net wat interessanter maakt.
+<br>
 
 ## De samenwerking
 ### Hoe ging de samenwerking
@@ -24,7 +28,7 @@ We spraken iedere dag af om te pair programmen en wisselde iedere dag om waardoo
 14-1-2024 Erik programmed & Robin pair programmed | players place symbol and renders it correctly, and fixed some bugs <br>
 15-1-2024 Robin programmed & Erik pair programmed | Added questions and base game loop<br>
 16-1-2024 Erik programmed & Robin pair programmed | Added checkQuestions facade & finished the game<br>
-
+<br>
 
 ## Uitleg design patterns:
 ### Builder:
