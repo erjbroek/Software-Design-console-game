@@ -35,10 +35,10 @@ Dit doet de gridDirector op basis van de array met daarin alle info over het bor
 Het bord wordt elke ronde opnieuw gemaakt in de Turn klasse waar we in de state design pattern nog meer over gaan uitleggen.
 
 ![gridDirector.png](src/img/gridDirector.png)<br>
-
+Hier is te zien hoe de gridDirector het bord opbouwt met en de gegevens meegeeft om het juiste teken in het juiste vakje te zetten.<br>
+<br>
 **Voorbeeld**<br>
 ![gridExample.png](src/img/gridExample.png)<br>
-Hier is te zien hoe de gridDirector het bord opbouwt met en de gegevens meegeeft om het juiste teken in het juiste vakje te zetten.
 ### Factory
 In ons boter-kaas-en-eieren spel heb je ook vragen die je iedere ronde beantwoord. 
 Er zijn 3 verschillende soorten vragen: true / false, multiple choice en open vragen.
