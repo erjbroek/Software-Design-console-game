@@ -16,8 +16,8 @@ We spraken iedere dag af om te pair programmen en wisselde iedere dag om waardoo
 
 
 ### Commits (update readme excluded):
-- Erik (6) + initial commit
-- Robin (7)
+- Erik (7) + initial commit
+- Robin (8)
 
 ### Planning
 9-1-2024 Initial commit <br>
@@ -82,7 +82,7 @@ Iedere ronde ziet er als volgt uit voor de speler aan zet:
 4. Teken we het bord zodat de speler kan kiezen waar deze zijn/haar teken wil zetten
 5. Vraag in welk vak de speler zijn/haar teken wil zetten
 6. Teken nogmaals het bord om te laten zien dat het teken geplaatst is
-7. Controleer of de speler drie op een rij heeft (indien geen drie op een rij eindigt de beurt)
+7. Controleer of de speler drie op een rij heeft (Indien er geen drie op een rij is, kijk of het gelijk spel is geworden. Indien het geen gelijk spel is eindigt de beurt)
 8. Feliciteer speler dat hij/zij drie op een rij heeft en eindig het spel
    <br>
    <br>
