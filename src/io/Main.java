@@ -50,6 +50,9 @@ public class Main {
                     turn.endGame();
                     endPlaying = true;
                 } else {
+                    if (turn.checkTie()) {
+                        endPlaying = true;
+                    }
                     turn.endTurn();
                 }
             } else {

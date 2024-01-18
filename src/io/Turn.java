@@ -59,6 +59,21 @@ public class Turn {
         return this.turnState.checkGrid(this.grid, this.checkGridFacade);
     }
 
+    public boolean checkTie() {
+        int count = 0;
+        for (int i = 0; i < this.grid.size(); i++) {
+            for (int j = 0; j < this.grid.size(); j++) {
+                if (this.grid.get(i).get(j) != " ") {
+                    count++;
+                }
+            }
+        }
+        if (count == 9) {
+            writer.writeLine("The game is tied, nobody has won.");
+            return true;
+        }   return false;
+    }
+
     public void endTurn() {
         this.turnState.endTurn();
     }
