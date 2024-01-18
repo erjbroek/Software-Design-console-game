@@ -4,7 +4,7 @@
 
 ## TicTacToe with questions
 Je kent allemaal wel het spel ticTacToe ook wel bekend boter-kaas-en-eieren, waarbij het doel is om 3 op een rij te krijgen.
-Om een twist aan het spel te geven hebben wij vragen aan toegevoegd die je correct moet beantwoorden, waarna je jouw teken mag plaatsen.
+Om een twist aan het spel te geven hebben wij vragen eraan toegevoegd die je correct moet beantwoorden, waarna je jouw teken mag plaatsen.
 Dit zorgt ervoor dat je niet alleen kennis moet hebben over boter-kaas-en-eieren, maar ook nog algemene kennis, wat de potjes toch net wat interessanter maakt.
 <br>
 
@@ -36,8 +36,8 @@ We spraken iedere dag af om te pair programmen en wisselde iedere dag om waardoo
 Om boter-kaas-en-eieren te kunnen spelen heb je een bord nodig, hiervoor gebruiken we een gridBuilder.
 Deze gridBuilder is verantwoordelijk voor het maken van de verschillende onderdelen van de grid.
 De gridBuilder implementeert de gridBuilderInterface zodat deze weet welke methods hij nodig heeft.
-Dan is er nog de gridDirector, deze roept de functies van de gridBuilder in de goede volgorde aan en zorgt er daarmee voor dat de grid juist gebouwt wordt.
-Dit doet de gridDirector op basis van de array met daarin alle info over het bord.
+Dan is er nog de gridDirector, deze roept de methods van de gridBuilder in de goede volgorde aan en zorgt er daarmee voor dat de grid juist gebouwd wordt.
+Dit doet de gridDirector op basis van het array met daarin alle info over het bord.
 Het bord wordt elke ronde opnieuw gemaakt in de Turn klasse waar we in de state design pattern nog meer over gaan uitleggen.
 
 ![gridDirector.png](src/img/gridDirector.png)<br>
