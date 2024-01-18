@@ -22,21 +22,30 @@ public class TurnPlayer2 implements TurnState {
         while (!validPlacement) {
             writer.writeLine("Write the number of the empty square you want to place your symbol in");
             String selected = reader.readLine();
-            int xPosition = Integer.parseInt(selected) % 3;
-            if (xPosition == 0) {
-                xPosition = 3;
-            }
-            int yPosition = (int) Math.ceil(Double.parseDouble(selected) / 3);
+            if (selected.matches("\\d+")) {
+                if (Integer.parseInt(selected) >= 1 && Integer.parseInt(selected) <= 9) {
+                    int xPosition = Integer.parseInt(selected) % 3;
+                    if (xPosition == 0) {
+                        xPosition = 3;
+                    }
+                    int yPosition = (int) Math.ceil(Double.parseDouble(selected) / 3);
 
-            List<String> rowToModify = new ArrayList<>(grid.get(yPosition - 1));
+                    List<String> rowToModify = new ArrayList<>(grid.get(yPosition - 1));
 
-            if (Objects.equals(rowToModify.get(xPosition - 1), " ") && Integer.parseInt(selected) >= 1 && Integer.parseInt(selected) <= 9) {
-                rowToModify.set(xPosition - 1, this.symbol);
-                grid.set(yPosition - 1, rowToModify);
-                validPlacement = true;
+                    if (Objects.equals(rowToModify.get(xPosition - 1), " ")) {
+                        rowToModify.set(xPosition - 1, this.symbol);
+                        grid.set(yPosition - 1, rowToModify);
+                        validPlacement = true;
+                    } else {
+                        writer.writeLine("That spot has already been taken, choose another please");
+                    }
+                } else {
+                    writer.writeLine("Number out of bounds, select value 1 - 9");
+                }
             } else {
-                writer.writeLine("That spot has already been taken, choose another please");
+                writer.writeLine("Input is not a number, select value 1 - 9");
             }
+
         }
         return grid;
     }
