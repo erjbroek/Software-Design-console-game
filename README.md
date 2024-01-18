@@ -29,6 +29,7 @@ We spraken iedere dag af om te pair programmen en wisselde iedere dag om waardoo
 15-1-2024 Robin programmed & Erik pair programmed | Added questions and base game loop<br>
 16-1-2024 Erik programmed & Robin pair programmed | Added checkQuestions facade & finished the game<br>
 <br>
+<br>
 
 ## Uitleg design patterns:
 ### Builder:
@@ -66,6 +67,7 @@ Open Question: <br>
 <br>
 Multiple choice question: <br>
 ![multipleChoiceQuestion.png](src/img/multipleChoiceQuestion.png)<br>
+<br>
 ### State
 Om na elke beurt te wisselen van speler maken we gebruik van het state design pattern, 
 deze zorgt ervoor dat de state aan het einde van elke beurt verandert om de beurt door te geven aan de volgende persoon.
