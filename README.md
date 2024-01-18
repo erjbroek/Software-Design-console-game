@@ -41,18 +41,18 @@ Dit doet de gridDirector op basis van het array met daarin alle info over het bo
 Het bord wordt elke ronde opnieuw gemaakt in de Turn klasse waar we in de state design pattern nog meer over gaan uitleggen.
 
 ![gridDirector.png](src/img/gridDirector.png)<br>
-Hier is te zien hoe de gridDirector het bord opbouwt met en de gegevens meegeeft om het juiste teken in het juiste vakje te zetten.<br>
+Hier is te zien hoe de gridDirector het bord opbouwt de gegevens om het juiste teken in het juiste vakje te zetten.<br>
 <br>
 **Voorbeeld**<br>
 ![gridExample.png](src/img/gridExample.png)<br>
 ### Factory
-In ons boter-kaas-en-eieren spel heb je ook vragen die je iedere ronde beantwoord. 
+In ons boter-kaas-en-eieren spel heb je ook vragen die je iedere ronde moet beantwoorden. 
 Er zijn 3 verschillende soorten vragen: true / false, multiple choice en open vragen.
-De question interface zorgt ervoor dat alle type vragen gemaakt en nagekeken kunnen worden, maar ze dit op hun eigen manier kunnen implementeren.<br>
+De question interface zorgt ervoor dat alle type vragen gemaakt en nagekeken kunnen worden, maar dat ze dit op hun eigen manier kunnen implementeren.<br>
 <br>
 ![questionFactories.png](src/img/questionFactories.png)<br>
 Hierboven is te zien hoe alle vragen worden aangemaakt en in de vragenlijst worden gezet.<br>
-Er zijn drie verschillende factories een voor elk type vraag deze maken een nieuwe vraag aan met de meegegeven gegevens. 
+Er zijn drie verschillende factories, een voor elk type vraag, en deze maken een nieuwe vraag aan met de meegegeven gegevens. 
 Vervolgens geeft hij de gemaakte vraag terug, die je later kunt nakijken als er een antwoord is geven. <br>
 <br>
 ![openQuestion.png](src/img/openQuestion.png)<br>
@@ -93,15 +93,15 @@ Dit van een van onze states, deze laat zien hoe de methodes voor speler 1 worden
 De turn class houdt bij in welke staat deze is, houdt updates van de grid bij.
 ### Facade
 ![checkGridFacade.png](src/img/checkGridFacade.png)<br>
-De checkGridFacade zorgt ervoor dat je met een check functie in alle richting kunt controlleren of een speler drie op een rij heeft.<br>
+De checkGridFacade zorgt ervoor dat je met een check method in alle richting kunt controlleren of een speler drie op een rij heeft.<br>
 <br>
 ![checkGrid.png](src/img/checkGrid.png)<br>
-Hier is te zien hoe we door middel van een functie kijken of een specifiek symbool drie op een rij heeft.
-Als een speler drie op een rij heeft, wordt dit terug gegeven en het spel beëindigt.<br>
+Hier is te zien hoe we door middel van een method kijken of een specifiek symbool drie op een rij heeft.
+Als een speler drie op een rij heeft, wordt dit terug gegeven en wordt het spel beëindigd.<br>
 <br>
 ![verticalCheck.png](src/img/verticalCheck.png)<br>
-In de verticalCheck loopen we door de x positie op drie vaste y coördinaten,
+In de verticalCheck lopen we door de x positie op drie vaste y coördinaten,
 hierbij kijken we of de symbolen op deze coördinaten allemaal gelijk zijn aan het meegegeven symbool.
-Als alle als de symbolen op deze drie x coördinaten gelijk zijn aan het meegegeven symbool geven we terug dat de speler drie op een rij heeft en dus gewonnen.
+Als de symbolen op deze drie x coördinaten gelijk zijn aan het meegegeven symbool, geven we terug dat de speler drie op een rij heeft en dus heeft gewonnen.
 
 ![drieOpEenRij.png](src/img/drieOpEenRij.png)
